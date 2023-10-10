@@ -8,7 +8,7 @@ body,
 html {
     height: 100%;
     padding: 10px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
 }
 
 .dialog {
@@ -45,22 +45,19 @@ html {
 .container {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    justify-content: center;
-    align-content: center;
-    height: 100%;
     display: none;
+    height: 500px;
 }
 
 .main-screen {
     display: grid;
     grid-template-columns: 3fr 1.5fr;
     height: 100%;
+    align-content: center;
     gap: 20px;
 }
 
-.show {
-    display: grid;
-}
+
 
 .hide {
     display: none;
@@ -82,10 +79,9 @@ html {
     font-size: 5rem;
 }
 
-#sidebar {
-    display: grid;
-    grid-template-rows: 1fr .5fr 1fr;
-    height: 100%;
+.sidebar {
+    display: none;
+    grid-template-rows: 1fr .5fr 1fr;    
 }
 
 .player {
@@ -116,7 +112,9 @@ html {
     align-items: center;
     justify-content: center;
 }
-
+.show {
+    display: grid;
+}
 button {
     padding: 7px 15px;
     border: none;

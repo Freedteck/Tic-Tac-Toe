@@ -25,13 +25,35 @@ const boards = document.querySelectorAll('.board')
 const main = document.querySelector('main')
 const dialog = document.querySelector('.dialog')
 const startBtn = document.getElementById('start')
+const sideBar = document.querySelector('.sidebar')
+const resetBtn = document.getElementById('reset')
 
 startBtn.addEventListener('click', () => {
     main.classList.add('show')
     dialog.classList.add('hide')
+    sideBar.classList.add('show')
 })
 
+const players = function () {
+    let name = 0
+    let score = 0
+    const increaseScore = () => score++
+    const getScore = () => score
+    
+    const playerScore = () => {
+        
+    }
+    return { increaseScore, getScore, index }
+}
+
+const player1 = players()
+const player2 = players()
 let player = 0
+
+if (player === 0) {
+    player1.name = 'X'
+}
+player2.name = 'O'
 
 boards.forEach((board, index) => {
     board.addEventListener('click', () => {
@@ -41,12 +63,18 @@ boards.forEach((board, index) => {
 
             gameBoard.gameBoardChild[index] = choice
         }
-        console.log(gameBoard.gameBoardChild);
+        
         const winner = gameBoard.winning()
         if (winner) {
             alert(`Player ${winner} wins`)
         } else {
             player = (player + 1) % 2
+            
+        }
+        if (winner === 'X') {
+            player1.increaseScore()
+        }else {
+            player2.increaseScore()
         }
     })
 })
