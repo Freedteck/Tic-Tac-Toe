@@ -12,6 +12,7 @@ const closeBtn = document.querySelector('.close')
 
 const player1Score = document.getElementById('score1');
 const player2Score = document.getElementById('score2');
+let moves = 0
 
 // Game Board Module
 const gameBoard = (function () {
@@ -38,6 +39,7 @@ const gameBoard = (function () {
         boardElements.forEach(boardElement => {
             boardElement.textContent = '';
             board.splice(0);
+            moves = 0
         });
     }
 
@@ -64,15 +66,19 @@ const game = (() => {
        
             const choice = currentPlayer.symbol;
             boardElement.textContent = choice;
+            moves++
             gameBoard.board[index] = choice;
         
     }
-
+    
     const displayWinner = () => {
         const winner = gameBoard.checkWinner();
         if (winner) {
             span.textContent = winner
             popUp.showModal()
+        } else if (moves === 9 && !winner) {
+            alert('It's a tie!! click Ok to continue'')          
+            gameBoard.clearBoard()
         }
         
         currentPlayer = currentPlayer === player1 ? player2 : player1;
