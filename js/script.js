@@ -61,11 +61,11 @@ const game = (() => {
     let currentPlayer = player1;
 
     const startGame = (boardElement, index) => {
-        if (!gameBoard.board[index]) {
+       
             const choice = currentPlayer.symbol;
             boardElement.textContent = choice;
             gameBoard.board[index] = choice;
-        }
+        
     }
 
     const displayWinner = () => {
@@ -74,6 +74,7 @@ const game = (() => {
             span.textContent = winner
             popUp.showModal()
         }
+        
         currentPlayer = currentPlayer === player1 ? player2 : player1;
 
         if (winner === 'X') {
@@ -124,8 +125,9 @@ closeBtn.addEventListener('click', () => {
 
 boardElements.forEach((boardElement, index) => {
     boardElement.addEventListener('click', () => {
-
-        game.startGame(boardElement, index)
-        game.displayWinner()
+        if (!gameBoard.board[index]) {
+            game.startGame(boardElement, index)
+            game.displayWinner()
+        }
     });
 });
