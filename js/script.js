@@ -77,7 +77,7 @@ const game = (() => {
             span.textContent = winner
             popUp.showModal()
         } else if (moves === 9 && !winner) {
-            alert('It's a tie!! click Ok to continue'')          
+            alert(`It's a tie!! click Ok to continue`)          
             gameBoard.clearBoard()
         }
         
