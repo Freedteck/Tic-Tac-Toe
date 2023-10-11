@@ -10,7 +10,26 @@
 </head>
 
 <body>
+  <dialog id="pop-up">
+    <div class="info">
+      <p class="close">❌</p>
+      <div class="top">
+        <h2>Tic Tac Toe</h2>
+        <hr>
+      </div>
+      <div class="desc">
+        <h3>
+          Player <span></span> Wins
+        </h3>
 
+        <p>
+          To continue the game, Press the button below 👇. <br>
+          Press the ❌ icon to exit.
+        </p>
+      </div>
+      <button id="continue">Continue</button>
+    </div>
+  </dialog>
   <div class="dialog">
     <div class="info">
       <div class="top">
@@ -55,13 +74,16 @@
     <section class="sidebar">
       <div class="player first">
         <div class="top">
-          <h3>Player 1</h3>
+          <h3>Player X</h3>
           <hr>
         </div>
-        
+
         <div class="desc">
-          <p>Selection: </p>
-          <p>Score: </p>
+          <p>Selection: X</p>
+          <div class="score">
+            <p>Score:</p>
+            <p id="score1">0</p>
+          </div>
         </div>
       </div>
       <div class="control">
@@ -69,13 +91,16 @@
       </div>
       <div class="player second">
         <div class="top">
-          <h3>Player 2</h3>
+          <h3>Player O</h3>
           <hr>
         </div>
-        
+
         <div class="desc">
-          <p>Selection: </p>
-          <p>Score: </p>
+          <p>Selection: O</p>
+          <div class="score">
+            <p>Score:</p>
+            <p id="score2">0</p>
+          </div>
         </div>
       </div>
     </section>

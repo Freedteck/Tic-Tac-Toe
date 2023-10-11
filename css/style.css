@@ -8,7 +8,7 @@ body,
 html {
     height: 100%;
     padding: 10px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .dialog {
@@ -81,7 +81,7 @@ html {
 
 .sidebar {
     display: none;
-    grid-template-rows: 1fr .5fr 1fr;    
+    grid-template-rows: 1fr .5fr 1fr;
 }
 
 .player {
@@ -89,6 +89,7 @@ html {
     border-radius: 20px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 20px;
     text-align: center;
     padding: 20px;
@@ -100,25 +101,70 @@ html {
     gap: 10px;
     line-height: 1.5;
     text-align: left;
+    font-size: 1.3rem;
+    font-weight: 500;
 }
+
 .player.first {
-    grid-row: 1;   
+    grid-row: 1;
 }
+
 .player.second {
     grid-row: 3;
 }
+
 .control {
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 .show {
     display: grid;
 }
+
 button {
     padding: 7px 15px;
     border: none;
     background-color: teal;
     color: white;
     font-weight: 500;
+    border-radius: 10px;
+    width: 100%;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgba(0, 128, 128, .7);
+}
+
+.score {
+    display: flex;
+    gap: 20px;
+}
+
+#pop-up {
+    margin: auto;
+    border: none;
+    border-radius: 20px;
+    width: max(200px, 300px);
+}
+
+#pop-up .info {
+    width: max(200px, 300px);
+    padding-top: 30px;
+}
+
+.close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 10px;
+}
+
+.close:hover {
+    cursor: pointer;
+    background-color: rgba(0, 128, 128, .7);
+    border-radius: 10px;
+    padding: 5px;
 }
